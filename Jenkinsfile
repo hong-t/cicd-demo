@@ -80,7 +80,9 @@ pipeline {
   }
   post('Report') {
     success {
-        qyWechatNotification aboutSend: true, failNotify: true, failSend: true, mentionedId: 'ALL', mentionedMobile: 'ALL', startBuild: true, successSend: true, webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=e505adb9-4676-4d30-8b10-ee3a4fb3f75e'
+      script {
+        qyWechatNotification webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=e505adb9-4676-4d30-8b10-ee3a4fb3f75e'
+}
      }
     always {
       script {
