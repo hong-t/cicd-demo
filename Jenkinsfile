@@ -82,7 +82,7 @@ pipeline {
     success {
       script {
         qyWechatNotification webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=e505adb9-4676-4d30-8b10-ee3a4fb3f75e',
-        subject: currentBuild.currentResult + " : " + env.JOB_NAME,
+        subject: currentBuild.currentResult + " : " + env.JOB_NAME
 }
      }
     always {
