@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git(url: '$URL', branch: '$BRANCH_NAME', changelog: true, credentialsId: 'KK-github-key', poll: true)
+        git(url: 'https://github.com/hong-t/cicd-demo', branch: '$BRANCH_NAME', changelog: true, credentialsId: 'KK-github-key', poll: true)
       }
     }
 
