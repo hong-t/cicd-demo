@@ -80,7 +80,7 @@ pipeline {
   }
   post('Report') {
     success {
-        qyWechatNotification aboutSend: true, failNotify: true, failSend: true, mentionedId: 'ALL', mentionedMobile: '13564039482', startBuild: true, successSend: true, webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ww0bdc8677284e622b&corpsecret=MvAEnEdlW0f1742DGa8s6kVvn3EjkcBsE_QDoYBquXM'
+        qyWechatNotification aboutSend: true, failNotify: true, failSend: true, mentionedId: 'AiChiTuDouDeMao', mentionedMobile: '13564039482', startBuild: true, successSend: true, webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ww0bdc8677284e622b&corpsecret=MvAEnEdlW0f1742DGa8s6kVvn3EjkcBsE_QDoYBquXM'
      }
     always {
       script {
