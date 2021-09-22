@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git(url: '$GIT_URL', branch: '$BRANCH_NAME', changelog: true, credentialsId: 'KK-github-key', poll: true)
+        git(url: '$URL', branch: '$BRANCH_NAME', changelog: true, credentialsId: 'KK-github-key', poll: true)
       }
     }
 
