@@ -88,7 +88,8 @@ pipeline {
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + $wxmsg
+        load 'base.groovy'
+        markdown: env.JOB_NAME + ${wxmsg}
      }
      }
     always {
