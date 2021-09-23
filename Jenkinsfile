@@ -2,6 +2,9 @@
 
 pipeline {
   agent any
+  environment {
+    successwxmsg = sh(returnStdout: true, script: 'cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md')
+  }
   tools {
     go 'go'
   }
@@ -83,14 +86,13 @@ pipeline {
   post('Report') {
     success {
       script {
-        env['wxmsg'] = sh 'cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md'
         wechat corpid: 'ww0bdc8677284e622b',
         secret: '72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E',
         agentid: '1000004',
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + env.wxmsg
+        markdown: env.JOB_NAME + ${successwxmsg}
      }
      }
     always {
