@@ -84,13 +84,14 @@ pipeline {
   post('Report') {
     success {
       script {
+        sh 'testname=`echo env.BUILD_CAUSE`'
         wechat corpid: 'ww0bdc8677284e622b',
         secret: '72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E',
         agentid: '1000004',
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + " build success\n" + "build user: " + env.BUILD_USER + "\n" + "build url: " + env.BUILD_URL + "\n" + env.BUILD_CAUSE
+        markdown: env.JOB_NAME + " build success\n" + "build user: " + env.BUILD_USER + "\n" + "build url: " + env.BUILD_URL + "\n" + $testname
      }
      }
     always {
