@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     GOPROXY = 'https://goproxy.cn,direct'
-    successwxmsg = sh(returnStdout: true, script: 'echo test')
+    env['successwxmsg'] = sh(returnStdout: true, script: 'echo test')
   }
   tools {
     go 'go'
