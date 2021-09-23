@@ -81,10 +81,10 @@ pipeline {
   post('Report') {
     success {
       script {
-        wechat corpid: ww0bdc8677284e622b,
-        secret: 72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E,
-        agentid: 1000004,
-        markdown: "test"
+        wechat corpid: 'ww0bdc8677284e622b',
+        secret: '72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E',
+        agentid: '1000004',
+        markdown: 'test'
      }
      }
     always {
