@@ -82,8 +82,8 @@ pipeline {
     success {
       script {
         wechat corpid: ww0bdc8677284e622b,
-        secret: MvAEnEdlW0f1742DGa8s6kVvn3EjkcBsE_QDoYBquXM,
-        agentid: 1000002,
+        secret: 72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E,
+        agentid: 1000004,
         markdown: "test"
      }
      }
