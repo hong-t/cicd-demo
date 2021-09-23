@@ -2,9 +2,6 @@
 
 pipeline {
   agent any
-  environment {
-    successwxmsg = sh(returnStdout: true, script: 'cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md')
-  }
   tools {
     go 'go'
   }
@@ -118,5 +115,6 @@ pipeline {
   }
   environment {
     GOPROXY = 'https://goproxy.cn,direct'
+    successwxmsg = sh(returnStdout: true, script: 'echo test')
   }
 }
