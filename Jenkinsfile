@@ -90,7 +90,7 @@ pipeline {
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + " build success\n" + "build user: " + env.BUILD_USER + env.BUILD_USERNAME +  env.BUILD_URL
+        markdown: env.JOB_NAME + " build success\n" + "build user: " + env.BUILD_USER +  "build url: " + env.BUILD_URL + env.BUILD_TIME
      }
      }
     always {
