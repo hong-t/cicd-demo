@@ -4,7 +4,6 @@ pipeline {
   agent any
   environment {
     GOPROXY = 'https://goproxy.cn,direct'
-    successwxmsg = sh(returnStdout: true, script: 'cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md | sed "s/JOB_NAME/${env.JOB_NAME}/"')
   }
   tools {
     go 'go'
@@ -93,7 +92,7 @@ pipeline {
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + env.successwxmsg
+        markdown: env.JOB_NAME + " build success\n" + "cause" + env.CAUSE
      }
      }
     always {
