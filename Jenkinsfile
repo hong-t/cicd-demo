@@ -80,17 +80,16 @@ pipeline {
   }
   post('Report') {
     success {
-      steps {
-        sh 'wxmsg=`cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md`'
-      }
       script {
+        sh 'msg=`cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md`'
+        env.wxmsg = $msg
         wechat corpid: 'ww0bdc8677284e622b',
         secret: '72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E',
         agentid: '1000004',
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + $wxmsg
+        markdown: env.JOB_NAME + env.wxmsg
      }
      }
     always {
