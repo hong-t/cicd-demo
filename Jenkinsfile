@@ -81,7 +81,7 @@ pipeline {
   post('Report') {
     success {
       script {
-        sh 'msg=`cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md`;export wxmsg=$msg',
+        sh 'msg=`cat $JENKINS_HOME/wechat-templates/success_wechat_tmp.md`;export wxmsg=$msg'
         wechat corpid: 'ww0bdc8677284e622b',
         secret: '72khfzQ6fKnftu97cflkVof-5s15VfKbku67napI02E',
         agentid: '1000004',
