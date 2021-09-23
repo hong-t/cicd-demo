@@ -93,7 +93,7 @@ pipeline {
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + ${successwxmsg}
+        markdown: env.JOB_NAME + env.successwxmsg
      }
      }
     always {
