@@ -87,7 +87,7 @@ pipeline {
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: '${FILE,path="$JENKINS_HOME/wechat-templates/success_wechat_tmp.md"}'
+        markdown: 'env.JOB_NAME build success'
      }
      }
     always {
