@@ -86,7 +86,6 @@ pipeline {
       script {
         sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh successful')
      }
-     }
       script {
         // env.ForEmailPlugin = env.WORKSPACE
         emailext attachmentsPattern: 'TestResults\\*.trx',
@@ -95,6 +94,7 @@ pipeline {
         subject: currentBuild.currentResult + " : " + env.JOB_NAME,
         to: '$DEFAULT_RECIPIENTS'
       }
+     }
     failure {
       script {
         // env.ForEmailPlugin = env.WORKSPACE
