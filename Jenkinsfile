@@ -82,6 +82,19 @@ pipeline {
     }
   }
   post('Report') {
+    fixed {
+      script {
+        sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh fixed')
+     }
+      script {
+        // env.ForEmailPlugin = env.WORKSPACE
+        emailext attachmentsPattern: 'TestResults\\*.trx',
+        body: '${FILE,path="$JENKINS_HOME/email-templates/success_email_tmp.html"}',
+        mimeType: 'text/html',
+        subject: currentBuild.currentResult + " : " + env.JOB_NAME,
+        to: '$DEFAULT_RECIPIENTS'
+      }
+     }
     success {
       script {
         sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh successful')
@@ -116,19 +129,6 @@ pipeline {
         // env.ForEmailPlugin = env.WORKSPACE
         emailext attachmentsPattern: 'TestResults\\*.trx',
         body: '${FILE,path="$JENKINS_HOME/email-templates/fail_email_tmp.html"}',
-        mimeType: 'text/html',
-        subject: currentBuild.currentResult + " : " + env.JOB_NAME,
-        to: '$DEFAULT_RECIPIENTS'
-      }
-     }
-    fixed {
-      script {
-        sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh fixed')
-     }
-      script {
-        // env.ForEmailPlugin = env.WORKSPACE
-        emailext attachmentsPattern: 'TestResults\\*.trx',
-        body: '${FILE,path="$JENKINS_HOME/email-templates/success_email_tmp.html"}',
         mimeType: 'text/html',
         subject: currentBuild.currentResult + " : " + env.JOB_NAME,
         to: '$DEFAULT_RECIPIENTS'
