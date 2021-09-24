@@ -2,7 +2,6 @@ pipeline {
   agent any
   environment {
     GOPROXY = 'https://goproxy.cn,direct'
-    env['successwxmsg'] = sh(returnStdout: true, script: 'echo test')
   }
   tools {
     go 'go'
@@ -91,7 +90,7 @@ pipeline {
         toparty: '2',
         touser: 'ALL',
         totag: '1',
-        markdown: env.JOB_NAME + " build success\n" + "build user: " + env.BUILD_USER + "\n" + "build url: " + env.BUILD_URL + "\n" + env.successwxmsg
+        markdown: env.JOB_NAME + " build success\n" + "build user: " + env.BUILD_USER + "\n" + "build url: " + env.BUILD_URL + "\n" + "build time: " + env.BUILD_TIME
      }
      }
     always {
