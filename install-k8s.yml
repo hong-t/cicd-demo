@@ -1,0 +1,8 @@
+- hosts: all
+  user: '{{ ansible_ssh_user }}'
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: Start local HTTP daemon
+      shell: 'echo test'
