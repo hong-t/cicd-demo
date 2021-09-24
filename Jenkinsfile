@@ -86,7 +86,7 @@ pipeline {
   post('Report') {
     success {
       script {
-        sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh')
+        sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh successful')
      }
      }
     always {
