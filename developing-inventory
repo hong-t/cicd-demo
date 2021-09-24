@@ -1,5 +1,5 @@
 [master]
-172.16.31.157 ansible_ssh_user=test ansible_ssh_pass=12345679 ansible_sudo_pass=12345679
+172.16.31.131 ansible_ssh_user=test ansible_ssh_pass=12345679 ansible_sudo_pass=12345679
 
 [all:vars]
 
