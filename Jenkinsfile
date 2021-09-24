@@ -110,7 +110,7 @@ pipeline {
      }
     aborted {
       script {
-        sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh abort')
+        sh(script: 'bash $JENKINS_HOME/wechat-templates/send_wxmsg.sh aborted')
      }
       script {
         // env.ForEmailPlugin = env.WORKSPACE
